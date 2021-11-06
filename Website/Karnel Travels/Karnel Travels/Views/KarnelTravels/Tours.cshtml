@@ -1,0 +1,132 @@
+﻿@model IEnumerable<Karnel_Travels.Models.Tour>
+
+@{
+    ViewBag.Title = "Tours";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+<aside id="colorlib-hero">
+    <div class="flexslider">
+        <ul class="slides">
+            <li style="background-image: url(@Url.Content("~/Content/images/Slider/girl_summer-wallpaper-1600x1200.jpg"));">
+                <div class="overlay"></div>
+                <div class="container-fluid">
+                    <div class="row">
+                        <div class="col-md-6 col-sm-12 col-md-offset-3 slider-text">
+                            <div class="slider-text-inner text-center">
+                                <h2>Welcome to the Kernal Travels--Tour Services</h2>
+                                <h1>A Tour &amp; Travel Service Website..</h1>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </li>
+            <li style="background-image: url(@Url.Content("~/Content/images/Slider/maui_hawaii_united_states-wallpaper-1440x960.jpg"));">
+                <div class="overlay"></div>
+                <div class="container-fluid">
+                    <div class="row">
+                        <div class="col-md-6 col-sm-12 col-md-offset-3 slider-text">
+                            <div class="slider-text-inner text-center">
+                                <h2>Discover &amp; Enjoy</h2>
+                                <h1>Everything you need in Kernal Travels</h1>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </li>
+            <li style="background-image: url(@Url.Content("~/Content/images/Slider/best_destinations_in_the_world-wallpaper-1600x1200.jpg"));">
+                <div class="overlay"></div>
+                <div class="container-fluids">
+                    <div class="row">
+                        <div class="col-md-6 col-sm-12 col-md-offset-3 slider-text">
+                            <div class="slider-text-inner text-center">
+                                <h2>You are invited</h2>
+                                <h1>We know how to please you</h1>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </li>
+            <li style="background-image: url(@Url.Content("~/Content/images/Slider/volcanic_eruption_in_papua_new_guinea-wallpaper-1600x1200.jpg"));">
+                <div class="overlay"></div>
+                <div class="container-fluid">
+                    <div class="row">
+                        <div class="col-md-6 col-sm-12 col-md-offset-3 slider-text">
+                            <div class="slider-text-inner text-center">
+                                <h2>Come &amp; enjoy the unforgetable nights</h2>
+                                <h1>In the heart of Kernal Travel</h1>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </li>
+        </ul>
+    </div>
+</aside>
+
+<div id="colorlib-reservation">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12 search-wrap">
+                <form method="post" class="colorlib-form">
+                    <div class="row">
+                        <div class="col-md-9">
+                            <div class="form-group">
+                                <label for="price">Search :</label>
+                                <div class="form-field">
+                                    <i class="icon icon-search3"></i>
+                                       <input type="text" id="txtsearch" class="form-control" placeholder="search by city">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-3">
+                            <input type="submit" name="submit" id="submit" placeholder="Search"  class="btn btn-primary btn-block">
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<div id="colorlib-rooms" class="colorlib-light-grey">
+    <div class="container" id="tours">
+       
+        @{Html.RenderAction("getTourstByCity", "KarnelTravels");}
+    </div>
+</div>
+<div class="container" style="margin-top:10px;">
+    <a href="@Url.Action("AddTour","KarnelTravels")">click here To add Tour</a>
+</div>
+
+
+<script>
+    $(document).ready(function () {
+        
+        $("#txtsearch").keyup(function () {
+          
+            $.ajax({
+
+                url: '@Url.Action("getTourstByCity", "KarnelTravels")',
+                type: 'get',
+                dataType: 'html',
+                data: { city: $("#txtsearch").val() },
+                success: function (res) {
+                    $("#tours").html(res);
+                },
+                error: function (err) {
+                   
+                        $("#tours").html("Error: ");
+                }
+
+                });
+            @*$("#tours").load("@Url.Action("getTourstByCity", "KarnelTravels")", { city: $("#txtsearch").val() }, function (responseTxt, statusTxt, xhr) {
+
+                if (statusTxt == "error")
+                    $("#tours").html("Error: " + xhr.status + ": " + xhr.statusText);
+
+            });*@
+
+        });
+    })
+</script>

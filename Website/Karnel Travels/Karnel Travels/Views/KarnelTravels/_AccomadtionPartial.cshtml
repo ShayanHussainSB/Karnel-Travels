@@ -1,0 +1,25 @@
+﻿@model IEnumerable<Karnel_Travels.Models.Accomadtion>
+<div class="row">
+     @{
+       foreach (var i in Model)
+               {
+                   <div class="col-md-4 room-wrap animate-box fadeInUp animated-fast">
+                    <a href="@Url.Content(@i.Accomadtion_Picture)" class="room image-popup-link" style="background-image: url('@Url.Content(@i.Accomadtion_Picture)');"></a>
+                    <div class="desc text-center">
+                   <span class="rate-star"><i class="icon-star-full full"></i><i class="icon-star-full full"></i><i class="icon-star-full full"></i><i class="icon-star-full"></i><i class="icon-star-full"></i></span>
+                   <h3><a href="rooms-suites.html"><b>@i.Accomadtion_Name</b></a></h3>
+                    <p class="price">
+                    <span class="currency">Rs :</span>
+                    <span class="price-room">@i.Accomadtion_Price</span>
+                    <span class="per">/ per night</span>
+                    </p>
+                    <p>
+                     @i.Accomadtion_Country..
+                      @i.Accomadtion_City
+                     </p>
+                   <p>@Html.ActionLink("Check Details", "AccomadtionDetails", new { id = @i.Accomadtion_Id, @class = "btn btn-primary" })</p>
+                      </div>
+                  </div>
+               }
+       }
+  </div>

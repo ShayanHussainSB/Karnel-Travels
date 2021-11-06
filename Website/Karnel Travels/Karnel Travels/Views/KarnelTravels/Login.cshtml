@@ -1,0 +1,137 @@
+﻿@model Karnel_Travels.Models.Login
+@{
+    ViewBag.Title = "Login";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+<link href="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+<script src="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js"></script>
+<script src="//cdnjs.cloudflare.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
+<!------ Include the above in your HEAD tag ---------->
+<style>
+    #LoginForm {
+        background-repeat: no-repeat;
+        background-position: center;
+        background-size: cover;
+        padding: 10px;
+        margin-top:200px;
+        margin-bottom:200px;
+    }
+
+    .form-heading {
+        color: #fff;
+        font-size: 30px;
+    }
+
+    .panel h2 {
+        color: #444444;
+        font-size: 30px;;
+        margin: 0 0 8px 0;
+    }
+
+    .panel p {
+        color: #777777;
+        font-size: 19px;
+        margin-bottom: 30px;
+        line-height: 24px;
+    }
+
+    .login-form .form-control {
+        background: #f7f7f7 none repeat scroll 0 0;
+        border: 1px solid #d4d4d4;
+        border-radius: 4px;
+        font-size: inherit;
+        height: 50px;
+        line-height: 50px;
+    }
+
+    .main-div {
+        background: #ffffff none repeat scroll 0 0;
+        border-radius: 2px;
+        box-shadow: 3px 3px 3px 3px #bbb6b6;
+        margin: 10px auto 30px;
+        max-width: 38%;
+        padding: 50px 70px 70px 71px;
+    }
+
+    .login-form .form-group {
+        margin-bottom: 10px;
+    }
+
+    .login-form {
+        text-align: center;
+    }
+
+    .forgot a {
+        color: #777777;
+        font-size: inherit;
+        text-decoration: underline;
+    }
+
+    .login-form .btn.btn-primary {
+        background: #1b73ff none repeat scroll 0 0;
+        border-color: #1b73ff;
+        color: #ffffff;
+        font-size: inherit;
+        width: 100%;
+        height: 50px;
+        line-height: 50px;
+        padding: 0;
+    }
+
+    .forgot {
+        text-align: left;
+        margin-bottom: 30px;
+    }
+
+    .botto-text {
+        color: #ffffff;
+        font-size: inherit;
+        margin: auto;
+    }
+
+    .login-form .btn.btn-primary.reset {
+        background: #1b73ff none repeat scroll 0 0;
+    }
+
+    .back {
+        text-align: left;
+        margin-top: 10px;
+    }
+
+        .back a {
+            color: #444444;
+            font-size: inherit;
+            text-decoration: none;
+        }
+</style>
+<div id="LoginForm">
+    <div class="container">
+        <div class="login-form">
+            <div class="main-div">
+                <div class="panel">
+                    <h2>LOG IN</h2>
+                    <p>Please enter your email and password</p>
+                </div>
+                <form id="Login" action="@Url.Action("Login","KarnelTravels")" method="post">
+                    <div class="form-group">
+
+                        @Html.TextBoxFor(m => m.Email, new {type="email" ,@class="form-control" ,id="inputEmail", placeholder="Email Address" })
+                        <span style="color:orangered">
+                        @Html.ValidationMessageFor(m => m.Email)
+                            </span>
+                    </div>
+                    <div class="form-group">
+                        @Html.TextBoxFor(m => m.Password, new {type="password" ,@class="form-control" ,id="inputPassword", placeholder="Password" })
+                        <span style="color:orangered">
+                            @Html.ValidationMessageFor(m => m.Password)
+                        </span>
+                    </div>
+                    <div class="forgot">
+                        <a href="@Url.Action("SignUp","KarnelTravels")" style ="color:#1b73ff;">Dont have An Account Click here</a>
+                    </div>
+                    <button type="submit" class="btn btn-primary">Login</button>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>

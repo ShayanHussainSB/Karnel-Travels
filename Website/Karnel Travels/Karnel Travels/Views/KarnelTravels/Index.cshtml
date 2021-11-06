@@ -1,0 +1,195 @@
+﻿@model  Karnel_Travels.Models.TourViewModel
+@{
+    ViewBag.Title = "Index";
+}
+@*Here Stars the Slider Of the Index Page*@
+
+
+
+<aside id="colorlib-hero">
+    <div class="flexslider">
+        <ul class="slides">
+            <li style="background-image: url(@Url.Content("~/Content/images/Slider/21638-hd-world-architecture.jpg"));">
+                <div class="overlay"></div>
+                <div class="container-fluid">
+                    <div class="row">
+                        <div class="col-md-6 col-sm-12 col-md-offset-3 slider-text">
+                            <div class="slider-text-inner text-center">
+                                <h2>Welcome to the Kernal Travels</h2>
+                                <h1>A Travel &amp; Tour Service Website..</h1>
+                                <p><a class="btn btn-primary btn-demo" href="@Url.Action("Login","KarnelTravels")"> Log In</a> <a class="btn btn-primary btn-learn" href="@Url.Action("SignUp","KarnelTravels")">Join The World</a></p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </li>
+            <li style="background-image: url(@Url.Content("~/Content/images/Slider/abstract-art-artistic-1020315.jpg"));">
+                <div class="overlay"></div>
+                <div class="container-fluid">
+                    <div class="row">
+                        <div class="col-md-6 col-sm-12 col-md-offset-3 slider-text">
+                            <div class="slider-text-inner text-center">
+                                <h2>Discover &amp; Enjoy</h2>
+                                <h1>Everything you need in Kernal Travels</h1>
+                                <p><a class="btn btn-primary btn-demo" href="@Url.Action("Login","KarnelTravels")"> Log In</a> <a class="btn btn-primary btn-learn" href="@Url.Action("SignUp", "KarnelTravels")">Join The World</a></p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </li>
+            <li style="background-image: url(@Url.Content("~/Content/images/Slider/best_destinations_in_the_world-wallpaper-1600x1200.jpg"));">
+                <div class="overlay"></div>
+                <div class="container-fluids">
+                    <div class="row">
+                        <div class="col-md-6 col-sm-12 col-md-offset-3 slider-text">
+                            <div class="slider-text-inner text-center">
+                                <h2>You are invited</h2>
+                                <h1>We know how to please you</h1>
+                                <p><a class="btn btn-primary btn-demo" href="@Url.Action("Login","KarnelTravels")"> Log In</a> <a class="btn btn-primary btn-learn" href="@Url.Action("SignUp", "KarnelTravels")">Join The World</a></p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </li>
+            <li style="background-image: url(@Url.Content("~/Content/images/Slider/fun_in_the_sun-wallpaper-1600x1200.jpg"));">
+                <div class="overlay"></div>
+                <div class="container-fluid">
+                    <div class="row">
+                        <div class="col-md-6 col-sm-12 col-md-offset-3 slider-text">
+                            <div class="slider-text-inner text-center">
+                                <h2>Come &amp; enjoy the unforgetable nights</h2>
+                                <h1>In the heart of Kernal Travel</h1>
+                                <p><a class="btn btn-primary btn-demo" href="@Url.Action("Login","KarnelTravels")"> Log In</a> <a class="btn btn-primary btn-learn" href="@Url.Action("SignUp", "KarnelTravels")">Join The World</a></p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </li>
+        </ul>
+    </div>
+</aside>
+@*From Here the Details Starts Procceding*@
+<div id="colorlib-services">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-3 animate-box text-center">
+                <div class="services">
+                    <span class="icon">
+                        <i class="flaticon-reception"></i>
+                    </span>
+                    <h3>24/7 Services</h3>
+                    <p class="text-center">In this Website You can book any hotel motel Trip... etc at any time you want its a user friendly website everything in this site is tested and anyone can use it.</p>
+                </div>
+            </div>
+            <div class="col-md-3 animate-box text-center">
+                <div class="services">
+                    <span class="icon">
+                        <i class="icon-food"></i>
+                    </span>
+                    <h3>Restaurants</h3>
+                    <p class="text-center">In This Website You Can easily Find Any Restrants near you at any time Kernal Travels allow  you to see every information possible about the restraunt.</p>
+                </div>
+            </div>
+            <div class="col-md-3 animate-box text-center">
+                <div class="services">
+                    <span class="icon">
+                        <i class="flaticon-car"></i>
+                    </span>
+                    <h3>Travel Services</h3>
+                    <p class="text-center">In this website with the help of Kernal travels Information you can use transportaion in every city of the country there is kernal travels allows you to book any type of transport in the site..</p>
+                </div>
+            </div>
+            <div class="col-md-3 animate-box text-center">
+                <div class="services">
+                    <span class="icon">
+                        <i class="icon-ticket"></i>
+                    </span>
+                    <h3>Tours &amp; Explore Places</h3>
+                    <p class="text-center">In this website with the help of Kernal travels Information you can Explore and KNow About Various Places Of the Country This Site Provies You To book Your Own Travel And Explore Wondrous Places Of The Country..</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+@*Hotel and Resourts*@
+<div id="colorlib-rooms" class="colorlib-light-grey">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-6 col-md-offset-3 text-center colorlib-heading animate-box">
+                <span><i class="icon-star-full"></i><i class="icon-star-full"></i><i class="icon-star-full"></i><i class="icon-star-full"></i><i class="icon-star-full"></i></span>
+                <h2>Hotels &amp; Resourts</h2>
+                <p>We love to tell our successful far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts.</p>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-12 animate-box">
+                <div class="owl-carousel owl-carousel2">
+                    @{
+                        foreach(var i in Model.Accomodations){
+                            <div class="item">
+                                <a href="@Url.Content(@i.Accomadtion_Picture)" class="room image-popup-link" style="background-image: url('@Url.Content(@i.Accomadtion_Picture)');"></a>
+                                <div class="desc text-center">
+                                    <span class="rate-star"><i class="icon-star-full full"></i><i class="icon-star-full full"></i><i class="icon-star-full full"></i><i class="icon-star-full full"></i><i class="icon-star-full"></i></span>
+                                    <h3><a href="rooms-suites.html">@i.Accomadtion_Name</a></h3>
+                                    <p class="price">
+                                        <span class="currency"><small>Rs</small></span>
+                                        <span class="price-room">@i.Accomadtion_Price</span>
+                                        <span class="per">/ per night</span>
+                                    </p>
+                                    <p>@Html.ActionLink("Check Details", "AccomadtionDetails", new { id = @i.Accomadtion_Id, @class = "btn btn-primary" })</p>
+                                </div>
+                            </div>
+                    }
+                    }
+                </div>
+            </div>
+            <div class="col-md-12 text-center animate-box">
+                <a href="@Url.Action("Accomadtion","KarnelTravels")">View all Hotels <i class="icon-arrow-right3"></i></a>
+            </div>
+        </div>
+    </div>
+</div>
+@*TOURS AND TRAVELS*@
+<div class="row" style="margin-top:50px;">
+    <div class="col-md-6 col-md-offset-3 text-center colorlib-heading animate-box fadeInUp animated-fast">
+        <span><i class="icon-star-full"></i><i class="icon-star-full"></i><i class="icon-star-full"></i><i class="icon-star-full"></i><i class="icon-star-full"></i></span>
+        <h2>Trips &amp; Tours</h2>
+        <p>We love to tell our successful far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts.</p>
+    </div>
+</div>
+<div class="container">
+    <div class="row">
+        <div class="amenities-flex">
+            @{
+                foreach (var i in Model.Tours)
+                {
+                    <div class="amenities-img animate-box" style="background-image: url('@Url.Content(@i.Tour_Picture)');"></div>
+                    <div class="desc animate-box">
+                        <h2><a href="#">@i.Tour_Name</a></h2>
+                        <p class="price">
+                            <span class="free">@i.Tour_Price Rs</span>
+                        </p>
+                        <p>@i.Tour_OverView</p>
+                        <p>@Html.ActionLink("Check Details", "TourDetails", new { id = @i.Tour_Id, @class = "btn btn-primary" })</p>
+                    </div>}
+            }
+            @{
+                 foreach(var i in Model.Tours2){
+                    <div class="desc animate-box">
+                        <h2><a href="#">@i.Tour_Name </a></h2>
+                        <p class="price">
+                            <span class="free">@i.Tour_Price Rs</span>
+                        </p>
+                        <p>@i.Tour_OverView</p>
+                        <p>@Html.ActionLink("Check Details", "TourDetails", new { id = @i.Tour_Id, @class = "btn btn-primary" })</p>
+                    </div>
+                  <div class="amenities-img animate-box" style="background-image:url('@Url.Content(@i.Tour_Picture)');"></div>
+                 }
+}
+                </div>
+            </div>
+                <div class="col-md-12 text-center animate-box" style="margin-top:50px;">
+                    <a href="@Url.Action("Tours","KarnelTravels")">View More <i class="icon-arrow-right3"></i></a>
+                </div>
+            </div>

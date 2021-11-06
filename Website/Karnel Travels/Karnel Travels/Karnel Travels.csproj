@@ -1,0 +1,623 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)\TypeScript\Microsoft.TypeScript.Default.props" Condition="Exists('$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)\TypeScript\Microsoft.TypeScript.Default.props')" />
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>
+    </ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{8305AFD1-E294-4FAD-9D87-9CF9D28463CB}</ProjectGuid>
+    <ProjectTypeGuids>{349c5851-65df-11da-9384-00065b846f21};{fae04ec0-301f-11d3-bf4b-00c04f79efbc}</ProjectTypeGuids>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Karnel_Travels</RootNamespace>
+    <AssemblyName>Karnel Travels</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <UseIISExpress>true</UseIISExpress>
+    <IISExpressSSLPort />
+    <IISExpressAnonymousAuthentication />
+    <IISExpressWindowsAuthentication />
+    <IISExpressUseClassicPipelineMode />
+    <TypeScriptToolsVersion>1.0</TypeScriptToolsVersion>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.2.0\lib\net45\EntityFramework.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.2.0\lib\net45\EntityFramework.SqlServer.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Web.DynamicData" />
+    <Reference Include="System.Web.Entity" />
+    <Reference Include="System.Web.ApplicationServices" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Web.Extensions" />
+    <Reference Include="System.Web.Helpers, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.3.2.7\lib\net45\System.Web.Helpers.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Web.Mvc, Version=5.2.7.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.Mvc.5.2.7\lib\net45\System.Web.Mvc.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Web.Razor, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.Razor.3.2.7\lib\net45\System.Web.Razor.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Web.WebPages, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.3.2.7\lib\net45\System.Web.WebPages.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Web.WebPages.Deployment, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.3.2.7\lib\net45\System.Web.WebPages.Deployment.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Web.WebPages.Razor, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.3.2.7\lib\net45\System.Web.WebPages.Razor.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Web.Services" />
+    <Reference Include="System.EnterpriseServices" />
+  </ItemGroup>
+  <ItemGroup>
+    <Reference Include="Microsoft.Web.Infrastructure">
+      <HintPath>..\packages\Microsoft.Web.Infrastructure.1.0.0.0\lib\net40\Microsoft.Web.Infrastructure.dll</HintPath>
+    </Reference>
+    <Reference Include="Newtonsoft.Json">
+      <HintPath>..\packages\Newtonsoft.Json.6.0.4\lib\net45\Newtonsoft.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Net.Http.Formatting">
+      <HintPath>..\packages\Microsoft.AspNet.WebApi.Client.5.2.3\lib\net45\System.Net.Http.Formatting.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Http">
+      <HintPath>..\packages\Microsoft.AspNet.WebApi.Core.5.2.3\lib\net45\System.Web.Http.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Http.WebHost">
+      <HintPath>..\packages\Microsoft.AspNet.WebApi.WebHost.5.2.3\lib\net45\System.Web.Http.WebHost.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="App_Data\Content\bootstrap-grid.css" />
+    <Content Include="App_Data\Content\bootstrap-grid.min.css" />
+    <Content Include="App_Data\Content\bootstrap-reboot.css" />
+    <Content Include="App_Data\Content\bootstrap-reboot.min.css" />
+    <Content Include="App_Data\Content\bootstrap.css" />
+    <Content Include="App_Data\Content\bootstrap.min.css" />
+    <Content Include="App_Data\Content\css\animate.css" />
+    <Content Include="App_Data\Content\css\bootstrap-datepicker.css" />
+    <Content Include="App_Data\Content\css\bootstrap.css" />
+    <Content Include="App_Data\Content\css\flexslider.css" />
+    <Content Include="App_Data\Content\css\icomoon.css" />
+    <Content Include="App_Data\Content\css\magnific-popup.css" />
+    <Content Include="App_Data\Content\css\owl.carousel.min.css" />
+    <Content Include="App_Data\Content\css\owl.theme.default.min.css" />
+    <Content Include="App_Data\Content\css\style.css" />
+    <Content Include="App_Data\Content\css\util.css" />
+    <Content Include="App_Data\Content\fonts\bootstrap\glyphicons-halflings-regular.svg" />
+    <Content Include="App_Data\Content\fonts\flaticon\backup.txt" />
+    <Content Include="App_Data\Content\fonts\flaticon\font\flaticon.css" />
+    <Content Include="App_Data\Content\fonts\flaticon\font\flaticon.html" />
+    <Content Include="App_Data\Content\fonts\flaticon\font\Flaticon.svg" />
+    <Content Include="App_Data\Content\fonts\icomoon\icomoon.svg" />
+    <Content Include="App_Data\Content\fonts\material-design-iconic-font\css\material-design-iconic-font.css" />
+    <Content Include="App_Data\Content\fonts\material-design-iconic-font\css\material-design-iconic-font.min.css" />
+    <Content Include="App_Data\Content\fonts\material-design-iconic-font\fonts\Material-Design-Iconic-Font.svg" />
+    <Content Include="App_Data\Content\images\582ca71972b4a.jpg" />
+    <Content Include="App_Data\Content\images\582ca72794e2c.jpg" />
+    <Content Include="App_Data\Content\images\582ca73078913.jpg" />
+    <Content Include="App_Data\Content\images\582ca7396cd8f.jpg" />
+    <Content Include="App_Data\Content\images\582ca7397c790.jpg" />
+    <Content Include="App_Data\Content\images\582ca73b67f70.jpg" />
+    <Content Include="App_Data\Content\images\582ca832a482f.jpg" />
+    <Content Include="App_Data\Content\images\585a2e218f5b8.jpg" />
+    <Content Include="App_Data\Content\images\585a2eb8d3478.jpg" />
+    <Content Include="App_Data\Content\images\585a403b3c05d.jpg" />
+    <Content Include="App_Data\Content\images\585a46a794bee.jpg" />
+    <Content Include="App_Data\Content\images\APRICOT1-e1444210027785.jpg" />
+    <Content Include="App_Data\Content\images\blog-1.jpg" />
+    <Content Include="App_Data\Content\images\explore-the-world-image.jpg" />
+    <Content Include="App_Data\Content\images\ExploreWhite-script.png" />
+    <Content Include="App_Data\Content\images\icons\favicon.ico" />
+    <Content Include="App_Data\Content\images\icons\icon-google.png" />
+    <Content Include="App_Data\Content\images\icons\map-marker.png" />
+    <Content Include="App_Data\Content\images\icons\symbol-01.png" />
+    <Content Include="App_Data\Content\images\lahore-second-largest-city-of-pakistan-1.jpg" />
+    <Content Include="App_Data\Content\images\lahore-second-largest-city-of-pakistan-2.jpg" />
+    <Content Include="App_Data\Content\images\lahore-second-largest-city-of-pakistan-3.jpg" />
+    <Content Include="App_Data\Content\images\lahore-second-largest-city-of-pakistan.jpg" />
+    <Content Include="App_Data\Content\images\Multan.jpg" />
+    <Content Include="App_Data\Content\images\travel-the-world-1.jpg" />
+    <Content Include="App_Data\Content\js\bootstrap-datepicker.js" />
+    <Content Include="App_Data\Content\js\bootstrap.min.js" />
+    <Content Include="App_Data\Content\js\google_map.js" />
+    <Content Include="App_Data\Content\js\jquery.easing.1.3.js" />
+    <Content Include="App_Data\Content\js\jquery.flexslider-min.js" />
+    <Content Include="App_Data\Content\js\jquery.magnific-popup.min.js" />
+    <Content Include="App_Data\Content\js\jquery.min.js" />
+    <Content Include="App_Data\Content\js\jquery.waypoints.min.js" />
+    <Content Include="App_Data\Content\js\magnific-popup-options.js" />
+    <Content Include="App_Data\Content\js\main.js" />
+    <Content Include="App_Data\Content\js\mainjs.js" />
+    <Content Include="App_Data\Content\js\modernizr-2.6.2.min.js" />
+    <Content Include="App_Data\Content\js\owl.carousel.min.js" />
+    <Content Include="App_Data\Content\js\respond.min.js" />
+    <Content Include="App_Data\Content\Site.css" />
+    <Content Include="Content\bootstrap-grid.css" />
+    <Content Include="Content\bootstrap-grid.min.css" />
+    <Content Include="Content\bootstrap-reboot.css" />
+    <Content Include="Content\bootstrap-reboot.min.css" />
+    <Content Include="Content\bootstrap.css" />
+    <Content Include="Content\bootstrap.min.css" />
+    <Content Include="Content\css\animate.css" />
+    <Content Include="Content\css\bootstrap-datepicker.css" />
+    <Content Include="Content\css\bootstrap.css" />
+    <Content Include="Content\css\flexslider.css" />
+    <Content Include="Content\css\icomoon.css" />
+    <Content Include="Content\css\magnific-popup.css" />
+    <Content Include="Content\css\owl.carousel.min.css" />
+    <Content Include="Content\css\owl.theme.default.min.css" />
+    <Content Include="Content\css\style.css" />
+    <Content Include="Content\css\util.css" />
+    <Content Include="Content\fonts\bootstrap\glyphicons-halflings-regular.svg" />
+    <Content Include="Content\fonts\flaticon\backup.txt" />
+    <Content Include="Content\fonts\flaticon\font\flaticon.css" />
+    <Content Include="Content\fonts\flaticon\font\flaticon.html" />
+    <Content Include="Content\fonts\flaticon\font\Flaticon.svg" />
+    <Content Include="Content\fonts\icomoon\icomoon.svg" />
+    <Content Include="Content\fonts\material-design-iconic-font\css\material-design-iconic-font.css" />
+    <Content Include="Content\fonts\material-design-iconic-font\css\material-design-iconic-font.min.css" />
+    <Content Include="Content\fonts\material-design-iconic-font\fonts\Material-Design-Iconic-Font.svg" />
+    <Content Include="Content\images\567d1a1cb17ad.jpg" />
+    <Content Include="Content\images\567d1a1cc9595.jpg" />
+    <Content Include="Content\images\567d1aceb5677.jpg" />
+    <Content Include="Content\images\567d1acecd90d.jpg" />
+    <Content Include="Content\images\567d1ca3f205c.jpg" />
+    <Content Include="Content\images\567d1ca45aabe.jpg" />
+    <Content Include="Content\images\567d1d01edf8e.jpg" />
+    <Content Include="Content\images\567d1d027a917.jpg" />
+    <Content Include="Content\images\567d1d53cdb17.jpg" />
+    <Content Include="Content\images\567d1ddd500d8.jpg" />
+    <Content Include="Content\images\567d1e2bd6ee5.jpg" />
+    <Content Include="Content\images\567d1eaecd978.jpg" />
+    <Content Include="Content\images\567d1eec031e1.jpg" />
+    <Content Include="Content\images\567d1f225e8e0.jpg" />
+    <Content Include="Content\images\567d1f2295d16.jpg" />
+    <Content Include="Content\images\567d1f58c1efe.jpg" />
+    <Content Include="Content\images\567d1f59b492a.jpg" />
+    <Content Include="Content\images\567e9cce4fbaf.jpg" />
+    <Content Include="Content\images\APRICOT1-e1444210027785.jpg" />
+    <Content Include="Content\images\explore-the-world-image.jpg" />
+    <Content Include="Content\images\ExploreWhite-script.png" />
+    <Content Include="Content\images\icons\favicon.ico" />
+    <Content Include="Content\images\icons\icon-google.png" />
+    <Content Include="Content\images\icons\map-marker.png" />
+    <Content Include="Content\images\icons\space-tourism.png" />
+    <Content Include="Content\images\icons\symbol-01.png" />
+    <Content Include="Content\images\lahore-second-largest-city-of-pakistan-1.jpg" />
+    <Content Include="Content\images\lahore-second-largest-city-of-pakistan-2.jpg" />
+    <Content Include="Content\images\lahore-second-largest-city-of-pakistan-3.jpg" />
+    <Content Include="Content\images\lahore-second-largest-city-of-pakistan.jpg" />
+    <Content Include="Content\images\Multan.jpg" />
+    <Content Include="Content\images\Slider\21638-hd-world-architecture.jpg" />
+    <Content Include="Content\images\Slider\abstract-art-artistic-1020315.jpg" />
+    <Content Include="Content\images\Slider\best_destinations_in_the_world-wallpaper-1600x1200.jpg" />
+    <Content Include="Content\images\Slider\boat_on_oahu_beach-wallpaper-1600x1200.jpg" />
+    <Content Include="Content\images\Slider\fun_in_the_sun-wallpaper-1600x1200.jpg" />
+    <Content Include="Content\images\Slider\getty_583734066_335273.jpg" />
+    <Content Include="Content\images\Slider\girl_summer-wallpaper-1600x1200.jpg" />
+    <Content Include="Content\images\Slider\home_banner.jpg" />
+    <Content Include="Content\images\Slider\images.jfif" />
+    <Content Include="Content\images\Slider\island_6-wallpaper-1600x1200.jpg" />
+    <Content Include="Content\images\Slider\maui_hawaii_united_states-wallpaper-1440x960.jpg" />
+    <Content Include="Content\images\Slider\MW-GY949_travel_20181122135819_ZH.jpg" />
+    <Content Include="Content\images\Slider\ocean_islands-wallpaper-1600x1200.jpg" />
+    <Content Include="Content\images\Slider\scuba_diving_coral_reef_2-wallpaper-1600x1200.jpg" />
+    <Content Include="Content\images\Slider\somewhere_in_the_maldives-wallpaper-1600x1200.jpg" />
+    <Content Include="Content\images\Slider\swimming_pool-wallpaper-1600x1200.jpg" />
+    <Content Include="Content\images\Slider\Tout-Aspen-HunterLawrence.jpg" />
+    <Content Include="Content\images\Slider\volcanic_eruption_in_papua_new_guinea-wallpaper-1600x1200.jpg" />
+    <Content Include="Content\images\travel-the-world-1.jpg" />
+    <Content Include="Content\js\bootstrap-datepicker.js" />
+    <Content Include="Content\js\bootstrap.min.js" />
+    <Content Include="Content\js\google_map.js" />
+    <Content Include="Content\js\jquery.easing.1.3.js" />
+    <Content Include="Content\js\jquery.flexslider-min.js" />
+    <Content Include="Content\js\jquery.magnific-popup.min.js" />
+    <Content Include="Content\js\jquery.min.js" />
+    <Content Include="Content\js\jquery.waypoints.min.js" />
+    <Content Include="Content\js\magnific-popup-options.js" />
+    <Content Include="Content\js\main.js" />
+    <Content Include="Content\js\mainjs.js" />
+    <Content Include="Content\js\modernizr-2.6.2.min.js" />
+    <Content Include="Content\js\owl.carousel.min.js" />
+    <Content Include="Content\js\respond.min.js" />
+    <Content Include="Content\Site.css" />
+    <Content Include="Global.asax" />
+    <Content Include="Scripts\bootstrap.bundle.js" />
+    <Content Include="Scripts\bootstrap.bundle.min.js" />
+    <Content Include="Scripts\bootstrap.js" />
+    <Content Include="Scripts\bootstrap.min.js" />
+    <Content Include="Scripts\esm\popper-utils.js" />
+    <Content Include="Scripts\esm\popper-utils.min.js" />
+    <Content Include="Scripts\esm\popper-utils.min.js.map" />
+    <Content Include="Scripts\esm\popper-utils.js.map" />
+    <Content Include="Scripts\esm\popper.js" />
+    <Content Include="Scripts\esm\popper.min.js" />
+    <Content Include="Scripts\esm\popper.min.js.map" />
+    <Content Include="Scripts\esm\popper.js.map" />
+    <Content Include="Scripts\bootstrap.min.js.map" />
+    <Content Include="Scripts\bootstrap.js.map" />
+    <Content Include="Scripts\bootstrap.bundle.min.js.map" />
+    <Content Include="Scripts\bootstrap.bundle.js.map" />
+    <Content Include="App_Data\Content\bootstrap-reboot.min.css.map" />
+    <Content Include="App_Data\Content\bootstrap-reboot.css.map" />
+    <Content Include="App_Data\Content\bootstrap-grid.min.css.map" />
+    <Content Include="App_Data\Content\bootstrap-grid.css.map" />
+    <Content Include="App_Data\Content\bootstrap.min.css.map" />
+    <Content Include="App_Data\Content\bootstrap.css.map" />
+    <Content Include="App_Data\Content\css\.DS_Store" />
+    <Content Include="App_Data\Content\css\bootstrap.css.map" />
+    <Content Include="App_Data\Content\css\style.css.map" />
+    <Content Include="App_Data\Content\fonts\.DS_Store" />
+    <Content Include="App_Data\Content\fonts\bootstrap\.DS_Store" />
+    <Content Include="App_Data\Content\fonts\bootstrap\glyphicons-halflings-regular.eot" />
+    <Content Include="App_Data\Content\fonts\bootstrap\glyphicons-halflings-regular.ttf" />
+    <Content Include="App_Data\Content\fonts\bootstrap\glyphicons-halflings-regular.woff" />
+    <Content Include="App_Data\Content\fonts\bootstrap\glyphicons-halflings-regular.woff2" />
+    <Content Include="App_Data\Content\fonts\flaticon\.DS_Store" />
+    <Content Include="App_Data\Content\fonts\flaticon\font\Flaticon.eot" />
+    <Content Include="App_Data\Content\fonts\flaticon\font\Flaticon.ttf" />
+    <Content Include="App_Data\Content\fonts\flaticon\font\Flaticon.woff" />
+    <Content Include="App_Data\Content\fonts\flaticon\font\_flaticon.scss" />
+    <Content Include="App_Data\Content\fonts\flaticon\license\license.pdf" />
+    <Content Include="App_Data\Content\fonts\icomoon\.DS_Store" />
+    <Content Include="App_Data\Content\fonts\icomoon\icomoon.eot" />
+    <Content Include="App_Data\Content\fonts\icomoon\icomoon.ttf" />
+    <Content Include="App_Data\Content\fonts\icomoon\icomoon.woff" />
+    <Content Include="App_Data\Content\images\.DS_Store" />
+    <Content Include="App_Data\Content\js\.DS_Store" />
+    <Content Include="App_Data\Content\sass\.DS_Store" />
+    <Content Include="App_Data\Content\sass\bootstrap.scss" />
+    <Content Include="App_Data\Content\sass\bootstrap\.DS_Store" />
+    <Content Include="App_Data\Content\sass\bootstrap\mixins\_alerts.scss" />
+    <Content Include="App_Data\Content\sass\bootstrap\mixins\_background-variant.scss" />
+    <Content Include="App_Data\Content\sass\bootstrap\mixins\_border-radius.scss" />
+    <Content Include="App_Data\Content\sass\bootstrap\mixins\_buttons.scss" />
+    <Content Include="App_Data\Content\sass\bootstrap\mixins\_center-block.scss" />
+    <Content Include="App_Data\Content\sass\bootstrap\mixins\_clearfix.scss" />
+    <Content Include="App_Data\Content\sass\bootstrap\mixins\_forms.scss" />
+    <Content Include="App_Data\Content\sass\bootstrap\mixins\_gradients.scss" />
+    <Content Include="App_Data\Content\sass\bootstrap\mixins\_grid-framework.scss" />
+    <Content Include="App_Data\Content\sass\bootstrap\mixins\_grid.scss" />
+    <Content Include="App_Data\Content\sass\bootstrap\mixins\_hide-text.scss" />
+    <Content Include="App_Data\Content\sass\bootstrap\mixins\_image.scss" />
+    <Content Include="App_Data\Content\sass\bootstrap\mixins\_labels.scss" />
+    <Content Include="App_Data\Content\sass\bootstrap\mixins\_list-group.scss" />
+    <Content Include="App_Data\Content\sass\bootstrap\mixins\_nav-divider.scss" />
+    <Content Include="App_Data\Content\sass\bootstrap\mixins\_nav-vertical-align.scss" />
+    <Content Include="App_Data\Content\sass\bootstrap\mixins\_opacity.scss" />
+    <Content Include="App_Data\Content\sass\bootstrap\mixins\_pagination.scss" />
+    <Content Include="App_Data\Content\sass\bootstrap\mixins\_panels.scss" />
+    <Content Include="App_Data\Content\sass\bootstrap\mixins\_progress-bar.scss" />
+    <Content Include="App_Data\Content\sass\bootstrap\mixins\_reset-filter.scss" />
+    <Content Include="App_Data\Content\sass\bootstrap\mixins\_reset-text.scss" />
+    <Content Include="App_Data\Content\sass\bootstrap\mixins\_resize.scss" />
+    <Content Include="App_Data\Content\sass\bootstrap\mixins\_responsive-visibility.scss" />
+    <Content Include="App_Data\Content\sass\bootstrap\mixins\_size.scss" />
+    <Content Include="App_Data\Content\sass\bootstrap\mixins\_tab-focus.scss" />
+    <Content Include="App_Data\Content\sass\bootstrap\mixins\_table-row.scss" />
+    <Content Include="App_Data\Content\sass\bootstrap\mixins\_text-emphasis.scss" />
+    <Content Include="App_Data\Content\sass\bootstrap\mixins\_text-overflow.scss" />
+    <Content Include="App_Data\Content\sass\bootstrap\mixins\_vendor-prefixes.scss" />
+    <Content Include="App_Data\Content\sass\bootstrap\_alerts.scss" />
+    <Content Include="App_Data\Content\sass\bootstrap\_badges.scss" />
+    <Content Include="App_Data\Content\sass\bootstrap\_breadcrumbs.scss" />
+    <Content Include="App_Data\Content\sass\bootstrap\_button-groups.scss" />
+    <Content Include="App_Data\Content\sass\bootstrap\_buttons.scss" />
+    <Content Include="App_Data\Content\sass\bootstrap\_carousel.scss" />
+    <Content Include="App_Data\Content\sass\bootstrap\_close.scss" />
+    <Content Include="App_Data\Content\sass\bootstrap\_code.scss" />
+    <Content Include="App_Data\Content\sass\bootstrap\_component-animations.scss" />
+    <Content Include="App_Data\Content\sass\bootstrap\_dropdowns.scss" />
+    <Content Include="App_Data\Content\sass\bootstrap\_forms.scss" />
+    <Content Include="App_Data\Content\sass\bootstrap\_glyphicons.scss" />
+    <Content Include="App_Data\Content\sass\bootstrap\_grid.scss" />
+    <Content Include="App_Data\Content\sass\bootstrap\_input-groups.scss" />
+    <Content Include="App_Data\Content\sass\bootstrap\_jumbotron.scss" />
+    <Content Include="App_Data\Content\sass\bootstrap\_labels.scss" />
+    <Content Include="App_Data\Content\sass\bootstrap\_list-group.scss" />
+    <Content Include="App_Data\Content\sass\bootstrap\_media.scss" />
+    <Content Include="App_Data\Content\sass\bootstrap\_mixins.scss" />
+    <Content Include="App_Data\Content\sass\bootstrap\_modals.scss" />
+    <Content Include="App_Data\Content\sass\bootstrap\_navbar.scss" />
+    <Content Include="App_Data\Content\sass\bootstrap\_navs.scss" />
+    <Content Include="App_Data\Content\sass\bootstrap\_normalize.scss" />
+    <Content Include="App_Data\Content\sass\bootstrap\_pager.scss" />
+    <Content Include="App_Data\Content\sass\bootstrap\_pagination.scss" />
+    <Content Include="App_Data\Content\sass\bootstrap\_panels.scss" />
+    <Content Include="App_Data\Content\sass\bootstrap\_popovers.scss" />
+    <Content Include="App_Data\Content\sass\bootstrap\_print.scss" />
+    <Content Include="App_Data\Content\sass\bootstrap\_progress-bars.scss" />
+    <Content Include="App_Data\Content\sass\bootstrap\_responsive-embed.scss" />
+    <Content Include="App_Data\Content\sass\bootstrap\_responsive-utilities.scss" />
+    <Content Include="App_Data\Content\sass\bootstrap\_scaffolding.scss" />
+    <Content Include="App_Data\Content\sass\bootstrap\_tables.scss" />
+    <Content Include="App_Data\Content\sass\bootstrap\_theme.scss" />
+    <Content Include="App_Data\Content\sass\bootstrap\_thumbnails.scss" />
+    <Content Include="App_Data\Content\sass\bootstrap\_tooltip.scss" />
+    <Content Include="App_Data\Content\sass\bootstrap\_type.scss" />
+    <Content Include="App_Data\Content\sass\bootstrap\_utilities.scss" />
+    <Content Include="App_Data\Content\sass\bootstrap\_variables.scss" />
+    <Content Include="App_Data\Content\sass\bootstrap\_wells.scss" />
+    <Content Include="App_Data\Content\sass\style.scss" />
+    <Content Include="App_Data\Content\sass\_bootstrap-compass.scss" />
+    <Content Include="App_Data\Content\sass\_bootstrap-mincer.scss" />
+    <Content Include="App_Data\Content\sass\_bootstrap-sprockets.scss" />
+    <Content Include="App_Data\Content\fonts\material-design-iconic-font\fonts\Material-Design-Iconic-Font.eot" />
+    <Content Include="App_Data\Content\fonts\material-design-iconic-font\fonts\Material-Design-Iconic-Font.ttf" />
+    <Content Include="App_Data\Content\fonts\material-design-iconic-font\fonts\Material-Design-Iconic-Font.woff" />
+    <Content Include="App_Data\Content\fonts\material-design-iconic-font\fonts\Material-Design-Iconic-Font.woff2" />
+    <Content Include="App_Data\Content\fonts\poppins\Poppins-Regular.ttf" />
+    <Content Include="App_Data\Content\fonts\poppins\Poppins-SemiBold.ttf" />
+    <Content Include="Content\bootstrap-grid.css.map" />
+    <Content Include="Content\bootstrap-grid.min.css.map" />
+    <Content Include="Content\bootstrap-reboot.css.map" />
+    <Content Include="Content\bootstrap-reboot.min.css.map" />
+    <Content Include="Content\bootstrap.css.map" />
+    <Content Include="Content\bootstrap.min.css.map" />
+    <Content Include="Content\css\.DS_Store" />
+    <Content Include="Content\css\bootstrap.css.map" />
+    <Content Include="Content\css\style.css.map" />
+    <Content Include="Content\fonts\.DS_Store" />
+    <Content Include="Content\fonts\bootstrap\.DS_Store" />
+    <Content Include="Content\fonts\bootstrap\glyphicons-halflings-regular.eot" />
+    <Content Include="Content\fonts\bootstrap\glyphicons-halflings-regular.ttf" />
+    <Content Include="Content\fonts\bootstrap\glyphicons-halflings-regular.woff" />
+    <Content Include="Content\fonts\bootstrap\glyphicons-halflings-regular.woff2" />
+    <Content Include="Content\fonts\flaticon\.DS_Store" />
+    <Content Include="Content\fonts\flaticon\font\Flaticon.eot" />
+    <Content Include="Content\fonts\flaticon\font\Flaticon.ttf" />
+    <Content Include="Content\fonts\flaticon\font\Flaticon.woff" />
+    <Content Include="Content\fonts\flaticon\font\_flaticon.scss" />
+    <Content Include="Content\fonts\flaticon\license\license.pdf" />
+    <Content Include="Content\fonts\icomoon\.DS_Store" />
+    <Content Include="Content\fonts\icomoon\icomoon.eot" />
+    <Content Include="Content\fonts\icomoon\icomoon.ttf" />
+    <Content Include="Content\fonts\icomoon\icomoon.woff" />
+    <Content Include="Content\fonts\material-design-iconic-font\fonts\Material-Design-Iconic-Font.eot" />
+    <Content Include="Content\fonts\material-design-iconic-font\fonts\Material-Design-Iconic-Font.ttf" />
+    <Content Include="Content\fonts\material-design-iconic-font\fonts\Material-Design-Iconic-Font.woff" />
+    <Content Include="Content\fonts\material-design-iconic-font\fonts\Material-Design-Iconic-Font.woff2" />
+    <Content Include="Content\fonts\poppins\Poppins-Regular.ttf" />
+    <Content Include="Content\fonts\poppins\Poppins-SemiBold.ttf" />
+    <Content Include="Content\images\.DS_Store" />
+    <Content Include="Content\js\.DS_Store" />
+    <Content Include="Content\sass\.DS_Store" />
+    <Content Include="Content\sass\bootstrap.scss" />
+    <Content Include="Content\sass\bootstrap\.DS_Store" />
+    <Content Include="Content\sass\bootstrap\mixins\_alerts.scss" />
+    <Content Include="Content\sass\bootstrap\mixins\_background-variant.scss" />
+    <Content Include="Content\sass\bootstrap\mixins\_border-radius.scss" />
+    <Content Include="Content\sass\bootstrap\mixins\_buttons.scss" />
+    <Content Include="Content\sass\bootstrap\mixins\_center-block.scss" />
+    <Content Include="Content\sass\bootstrap\mixins\_clearfix.scss" />
+    <Content Include="Content\sass\bootstrap\mixins\_forms.scss" />
+    <Content Include="Content\sass\bootstrap\mixins\_gradients.scss" />
+    <Content Include="Content\sass\bootstrap\mixins\_grid-framework.scss" />
+    <Content Include="Content\sass\bootstrap\mixins\_grid.scss" />
+    <Content Include="Content\sass\bootstrap\mixins\_hide-text.scss" />
+    <Content Include="Content\sass\bootstrap\mixins\_image.scss" />
+    <Content Include="Content\sass\bootstrap\mixins\_labels.scss" />
+    <Content Include="Content\sass\bootstrap\mixins\_list-group.scss" />
+    <Content Include="Content\sass\bootstrap\mixins\_nav-divider.scss" />
+    <Content Include="Content\sass\bootstrap\mixins\_nav-vertical-align.scss" />
+    <Content Include="Content\sass\bootstrap\mixins\_opacity.scss" />
+    <Content Include="Content\sass\bootstrap\mixins\_pagination.scss" />
+    <Content Include="Content\sass\bootstrap\mixins\_panels.scss" />
+    <Content Include="Content\sass\bootstrap\mixins\_progress-bar.scss" />
+    <Content Include="Content\sass\bootstrap\mixins\_reset-filter.scss" />
+    <Content Include="Content\sass\bootstrap\mixins\_reset-text.scss" />
+    <Content Include="Content\sass\bootstrap\mixins\_resize.scss" />
+    <Content Include="Content\sass\bootstrap\mixins\_responsive-visibility.scss" />
+    <Content Include="Content\sass\bootstrap\mixins\_size.scss" />
+    <Content Include="Content\sass\bootstrap\mixins\_tab-focus.scss" />
+    <Content Include="Content\sass\bootstrap\mixins\_table-row.scss" />
+    <Content Include="Content\sass\bootstrap\mixins\_text-emphasis.scss" />
+    <Content Include="Content\sass\bootstrap\mixins\_text-overflow.scss" />
+    <Content Include="Content\sass\bootstrap\mixins\_vendor-prefixes.scss" />
+    <Content Include="Content\sass\bootstrap\_alerts.scss" />
+    <Content Include="Content\sass\bootstrap\_badges.scss" />
+    <Content Include="Content\sass\bootstrap\_breadcrumbs.scss" />
+    <Content Include="Content\sass\bootstrap\_button-groups.scss" />
+    <Content Include="Content\sass\bootstrap\_buttons.scss" />
+    <Content Include="Content\sass\bootstrap\_carousel.scss" />
+    <Content Include="Content\sass\bootstrap\_close.scss" />
+    <Content Include="Content\sass\bootstrap\_code.scss" />
+    <Content Include="Content\sass\bootstrap\_component-animations.scss" />
+    <Content Include="Content\sass\bootstrap\_dropdowns.scss" />
+    <Content Include="Content\sass\bootstrap\_forms.scss" />
+    <Content Include="Content\sass\bootstrap\_glyphicons.scss" />
+    <Content Include="Content\sass\bootstrap\_grid.scss" />
+    <Content Include="Content\sass\bootstrap\_input-groups.scss" />
+    <Content Include="Content\sass\bootstrap\_jumbotron.scss" />
+    <Content Include="Content\sass\bootstrap\_labels.scss" />
+    <Content Include="Content\sass\bootstrap\_list-group.scss" />
+    <Content Include="Content\sass\bootstrap\_media.scss" />
+    <Content Include="Content\sass\bootstrap\_mixins.scss" />
+    <Content Include="Content\sass\bootstrap\_modals.scss" />
+    <Content Include="Content\sass\bootstrap\_navbar.scss" />
+    <Content Include="Content\sass\bootstrap\_navs.scss" />
+    <Content Include="Content\sass\bootstrap\_normalize.scss" />
+    <Content Include="Content\sass\bootstrap\_pager.scss" />
+    <Content Include="Content\sass\bootstrap\_pagination.scss" />
+    <Content Include="Content\sass\bootstrap\_panels.scss" />
+    <Content Include="Content\sass\bootstrap\_popovers.scss" />
+    <Content Include="Content\sass\bootstrap\_print.scss" />
+    <Content Include="Content\sass\bootstrap\_progress-bars.scss" />
+    <Content Include="Content\sass\bootstrap\_responsive-embed.scss" />
+    <Content Include="Content\sass\bootstrap\_responsive-utilities.scss" />
+    <Content Include="Content\sass\bootstrap\_scaffolding.scss" />
+    <Content Include="Content\sass\bootstrap\_tables.scss" />
+    <Content Include="Content\sass\bootstrap\_theme.scss" />
+    <Content Include="Content\sass\bootstrap\_thumbnails.scss" />
+    <Content Include="Content\sass\bootstrap\_tooltip.scss" />
+    <Content Include="Content\sass\bootstrap\_type.scss" />
+    <Content Include="Content\sass\bootstrap\_utilities.scss" />
+    <Content Include="Content\sass\bootstrap\_variables.scss" />
+    <Content Include="Content\sass\bootstrap\_wells.scss" />
+    <Content Include="Content\sass\style.scss" />
+    <Content Include="Content\sass\_bootstrap-compass.scss" />
+    <Content Include="Content\sass\_bootstrap-mincer.scss" />
+    <Content Include="Content\sass\_bootstrap-sprockets.scss" />
+    <Content Include="ClassDiagram1.cd" />
+    <Content Include="ClassDiagram2.cd" />
+    <None Include="Scripts\jquery-3.3.1.intellisense.js" />
+    <Content Include="Scripts\jquery-3.3.1.js" />
+    <Content Include="Scripts\jquery-3.3.1.min.js" />
+    <Content Include="Scripts\jquery-3.3.1.slim.js" />
+    <Content Include="Scripts\jquery-3.3.1.slim.min.js" />
+    <Content Include="Scripts\modernizr-2.6.2.js" />
+    <Content Include="Scripts\popper-utils.js" />
+    <Content Include="Scripts\popper-utils.min.js" />
+    <Content Include="Scripts\popper.js" />
+    <Content Include="Scripts\popper.min.js" />
+    <Content Include="Scripts\umd\popper-utils.js" />
+    <Content Include="Scripts\umd\popper-utils.min.js" />
+    <Content Include="Scripts\umd\popper.js" />
+    <Content Include="Scripts\umd\popper.min.js" />
+    <Content Include="Web.config" />
+    <Content Include="Scripts\umd\popper-utils.min.js.map" />
+    <Content Include="Scripts\umd\popper-utils.js.map" />
+    <Content Include="Scripts\umd\popper.min.js.map" />
+    <Content Include="Scripts\umd\popper.js.map" />
+    <Content Include="Scripts\README.md" />
+    <Content Include="Scripts\popper-utils.min.js.map" />
+    <Content Include="Scripts\popper-utils.js.map" />
+    <Content Include="Scripts\popper.min.js.map" />
+    <Content Include="Scripts\popper.js.map" />
+    <Content Include="Scripts\jquery-3.3.1.slim.min.map" />
+    <Content Include="Scripts\jquery-3.3.1.min.map" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="App_Start\RouteConfig.cs" />
+    <Compile Include="App_Start\WebApiConfig.cs" />
+    <Compile Include="Controllers\KarnelTravelsController.cs" />
+    <Compile Include="Global.asax.cs">
+      <DependentUpon>Global.asax</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Accomadtion.cs" />
+    <Compile Include="Models\Accomadtion_Booking.cs" />
+    <Compile Include="Models\AccountViewModel.cs" />
+    <Compile Include="Models\Contact.cs" />
+    <Compile Include="Models\database.cs" />
+    <Compile Include="Models\Login.cs" />
+    <Compile Include="Models\Tour.cs" />
+    <Compile Include="Models\TourDetailModel.cs" />
+    <Compile Include="Models\TourViewModel.cs" />
+    <Compile Include="Models\Tour_Booking.cs" />
+    <Compile Include="Models\Travel.cs" />
+    <Compile Include="Models\Travel_Booking.cs" />
+    <Compile Include="Models\User.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\web.config" />
+    <Content Include="packages.config" />
+    <Content Include="Views\_ViewStart.cshtml" />
+    <Content Include="Views\Shared\_Layout.cshtml" />
+    <Content Include="Views\KarnelTravels\Index.cshtml" />
+    <Content Include="Views\KarnelTravels\Tours.cshtml" />
+    <Content Include="Views\KarnelTravels\About.cshtml" />
+    <Content Include="Views\KarnelTravels\Contact.cshtml" />
+    <Content Include="Views\KarnelTravels\SignUp.cshtml" />
+    <Content Include="Views\KarnelTravels\Login.cshtml" />
+    <Content Include="Views\KarnelTravels\Signupadmin.cshtml" />
+    <Content Include="Views\KarnelTravels\AddTour.cshtml" />
+    <Content Include="Views\KarnelTravels\AddAccomadtion.cshtml" />
+    <Content Include="Views\KarnelTravels\AddTravel.cshtml" />
+    <Content Include="Views\KarnelTravels\Accomadtion.cshtml" />
+    <Content Include="Views\KarnelTravels\Travel.cshtml" />
+    <Content Include="Views\KarnelTravels\TourDetails.cshtml" />
+    <Content Include="Views\KarnelTravels\AccomadtionDetails.cshtml" />
+    <Content Include="Views\KarnelTravels\TravelDetails.cshtml" />
+    <Content Include="Views\KarnelTravels\_TourPartial.cshtml" />
+    <Content Include="Views\KarnelTravels\_AccomadtionPartial.cshtml" />
+    <Content Include="Views\KarnelTravels\Account.cshtml" />
+    <Content Include="Views\KarnelTravels\_TravelPartial.cshtml" />
+    <None Include="Web.Debug.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </None>
+    <None Include="Web.Release.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </None>
+  </ItemGroup>
+  <ItemGroup />
+  <ItemGroup>
+    <TypeScriptCompile Include="Scripts\index.d.ts" />
+  </ItemGroup>
+  <PropertyGroup>
+    <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
+    <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
+  </PropertyGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)\TypeScript\Microsoft.TypeScript.targets" Condition="Exists('$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)\TypeScript\Microsoft.TypeScript.targets')" />
+  <Import Project="$(VSToolsPath)\WebApplications\Microsoft.WebApplication.targets" Condition="'$(VSToolsPath)' != ''" />
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v10.0\WebApplications\Microsoft.WebApplication.targets" Condition="false" />
+  <ProjectExtensions>
+    <VisualStudio>
+      <FlavorProperties GUID="{349c5851-65df-11da-9384-00065b846f21}">
+        <WebProjectProperties>
+          <UseIIS>True</UseIIS>
+          <AutoAssignPort>True</AutoAssignPort>
+          <DevelopmentServerPort>50132</DevelopmentServerPort>
+          <DevelopmentServerVPath>/</DevelopmentServerVPath>
+          <IISUrl>http://localhost:50132/</IISUrl>
+          <NTLMAuthentication>False</NTLMAuthentication>
+          <UseCustomServer>False</UseCustomServer>
+          <CustomServerUrl>
+          </CustomServerUrl>
+          <SaveServerSettingsInUserFile>False</SaveServerSettingsInUserFile>
+        </WebProjectProperties>
+      </FlavorProperties>
+    </VisualStudio>
+  </ProjectExtensions>
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

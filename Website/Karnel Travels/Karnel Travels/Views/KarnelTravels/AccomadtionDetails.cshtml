@@ -1,0 +1,190 @@
+﻿@model Karnel_Travels.Models.TourDetailModel
+
+@{
+    ViewBag.Title = "AccomadtionDetails";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+<aside id="colorlib-hero">
+    <div class="flexslider">
+        <ul class="slides">
+            @{
+                foreach (var i in Model.Accomadtionsdata)
+                {
+                    <li style="background-image: url(@Url.Content(@i.Accomadtion_Picture));">
+                        <div class="overlay"></div>
+                        <div class="container-fluid">
+                            <div class="row">
+                                <div class="col-md-6 col-sm-12 col-md-offset-3 slider-text">
+                                    <div class="slider-text-inner text-center">
+                                        <h1>@i.Accomadtion_Name</h1>
+                                        <h2>A Tour By @i.Accomadtion_Type</h2>
+                                        <p><a class="btn btn-primary btn-demo" href="#details"> View Detail</a> <a class="btn btn-primary btn-learn" href="#overview">Over View</a></p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </li>
+                }
+            }
+        </ul>
+    </div>
+</aside>
+
+<div id="colorlib-reservation">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12 search-wrap">
+                <form method="post" class="colorlib-form" action="@Url.Action("BookAccomadtion", "KarnelTravels")">
+                    <div class="row">
+                        <div class="col-md-3">
+                            <div class="form-group">
+                                <label for="date">Choose A Book Date:</label>
+                                <div class="form-field">
+                                    <i class="icon icon-calendar2"></i>
+                                    <input type="date" id="date" class="form-control date" placeholder="Choose Date">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-2">
+                            <div class="form-group">
+                                <label for="adults">Adults</label>
+                                <div class="form-field">
+                                    <i class="icon icon-arrow-down3"></i>
+                                    <select name="people" id="people" class="form-control">
+                                        <option value="#" style="color:black;">1</option>
+                                        <option value="#" style="color:black;">2</option>
+                                        <option value="#" style="color:black;">3</option>
+                                        <option value="#" style="color:black;">4</option>
+                                        <option value="#" style="color:black;">5+</option>
+                                    </select>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-2">
+                            <div class="form-group">
+                                <label for="children">Children</label>
+                                <div class="form-field">
+                                    <i class="icon icon-arrow-down3"></i>
+                                    <select name="people" id="people" class="form-control">
+                                        <option value="#" style="color:black;">1</option>
+                                        <option value="#" style="color:black;">2</option>
+                                        <option value="#" style="color:black;">3</option>
+                                        <option value="#" style="color:black;">4</option>
+                                        <option value="#" style="color:black;">5+</option>
+                                    </select>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-3">
+                            <div class="form-group">
+                                <label for="date">Price:</label>
+                                <div class="form-field">
+                                    <i class="icon icon-price-tag"></i>
+                                    @{
+                                        foreach (var i in Model.Accomadtionsdata)
+                                        {
+                                            <input type="text" id="price" class="form-control date" value="RS @i.Accomadtion_Price" readonly>
+                                            <input type="hidden" id="price" class="form-control date" name="id" value="@i.Accomadtion_Id" readonly>
+                                        }
+                                    }
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-2">
+                            <input type="submit" name="submit" id="submit" value="Book!" class="btn btn-primary btn-block">
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+@{
+    foreach (var i in Model.Accomadtionsdata)
+    {
+        <div id="colorlib-about">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-6">
+                        <div class="about animate-box">
+                            <h1>Important Information</h1>
+                            <p>@i.Accomadtion_ImpInfo</p>
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <img class="img-responsive" src="@Url.Content(@i.Accomadtion_Picture)" alt="Free HTML5 Bootstrap Template by colorlib.com">
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div id="colorlib-about">
+            <div class="container" id="overview">
+                <div class="row">
+                    <div class="col-md-12 text-center text-dark">
+                        <h1>Address :</h1>
+                        <p>@i.Accomadtion_Address</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="container">
+            <div class="text-center text-dark" id="details">
+                <div class="row">
+                    <div class="col-md-6">
+                        <h1>Details :</h1>
+                        <p>
+                            <b>Country :</b> @i.Accomadtion_Country  &amp; <b>City :</b> @i.Accomadtion_City
+                        </p>
+                    </div>
+                    <div class="col-md-6 text-center text-dark">
+                        <h1>OverView:</h1>
+                        <p>@i.Accomadtion_OverView</p>
+                    </div>
+                </div>
+            </div>
+            @Html.ActionLink("Click Here To delete This Following Accomadtion", "DeleteAccomadtion", new { id = @i.Accomadtion_Id })
+
+
+        </div>
+    }
+}
+<hr />
+<div id="colorlib-rooms" class="colorlib-light-grey">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-6 col-md-offset-3 text-center colorlib-heading animate-box">
+                <span><i class="icon-star-full"></i><i class="icon-star-full"></i><i class="icon-star-full"></i><i class="icon-star-full"></i><i class="icon-star-full"></i></span>
+                <h2>Related Things</h2>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-12 animate-box">
+                <div class="owl-carousel owl-carousel2">
+                    @{
+                        foreach (var i in Model.Accomadtions)
+                        {
+                            <div class="item">
+                                <a href="@Url.Content(@i.Accomadtion_Picture)" class="room image-popup-link" style="background-image: url('@Url.Content(@i.Accomadtion_Picture)');"></a>
+                                <div class="desc text-center">
+                                    <span class="rate-star"><i class="icon-star-full full"></i><i class="icon-star-full full"></i><i class="icon-star-full full"></i><i class="icon-star-full full"></i><i class="icon-star-full"></i></span>
+                                    <h3><a href="rooms-suites.html">@i.Accomadtion_Name</a></h3>
+                                    <p class="price">
+                                        <span class="currency"><small>Rs</small></span>
+                                        <span class="price-room">@i.Accomadtion_Price</span>
+                                        <span class="per">/ per night</span>
+                                    </p>
+                                    <p>@Html.ActionLink("Check It Out", "TourDetails", new { id = @i.Accomadtion_Id, @class = "btn btn-primary" })</p>
+                                </div>
+                            </div>
+                        }
+                    }
+                </div>
+            </div>
+            <div class="col-md-12 text-center animate-box">
+                <a href="@Url.Action("Tours","KarnelTravels")">View all <i class="icon-arrow-right3"></i></a>
+            </div>
+        </div>
+    </div>
+</div>
+

@@ -1,0 +1,130 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ClassDiagram MajorVersion="1" MinorVersion="1">
+  <Class Name="Karnel_Travels.RouteConfig">
+    <Position X="11.25" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAABAAAAAAAAAAAAA=</HashCode>
+      <FileName>App_Start\RouteConfig.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Karnel_Travels.WebApiConfig">
+    <Position X="6.75" Y="6" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAABAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>App_Start\WebApiConfig.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Karnel_Travels.Global">
+    <Position X="11.25" Y="1.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAIAAAAAAAAAAA=</HashCode>
+      <FileName>Global.asax.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Karnel_Travels.Controllers.KarnelTravelsController">
+    <Position X="8.5" Y="0.5" Width="2.5" />
+    <TypeIdentifier>
+      <HashCode>AAoAAKAYAAAACIEAGGCQECAAAICQAAKBBAEQAAEIQEA=</HashCode>
+      <FileName>Controllers\KarnelTravelsController.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Karnel_Travels.Models.Accomadtion">
+    <Position X="0.5" Y="0.5" Width="2" />
+    <TypeIdentifier>
+      <HashCode>AAAAQAAAAADEgAAAIAAAAABAAAAAAAAABEQBAAACAAA=</HashCode>
+      <FileName>Models\Accomadtion.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Karnel_Travels.Models.Accomadtion_Booking">
+    <Position X="13" Y="4.25" Width="2" />
+    <TypeIdentifier>
+      <HashCode>ACAAACAEAQAAAAABAIAAQABAAAAAAAAAAAAAAAAIAAA=</HashCode>
+      <FileName>Models\Accomadtion_Booking.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Karnel_Travels.Models.AccountViewModel">
+    <Position X="4.75" Y="5.25" Width="1.75" />
+    <TypeIdentifier>
+      <HashCode>AAAAACAAAAAAAAAAAgAAAAAABAAAAABAAAAAAAAAAAA=</HashCode>
+      <FileName>Models\AccountViewModel.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Karnel_Travels.Models.Contact">
+    <Position X="6.5" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAEAAACIAAAAAAIABAAAEAAAAAAAAAAAAAAAAAAg=</HashCode>
+      <FileName>Models\Contact.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Karnel_Travels.Models.database">
+    <Position X="0.5" Y="4" Width="2" />
+    <TypeIdentifier>
+      <HashCode>AAAgACAAAAAAAAAAAAAAAAAAAAQAAAAAAgAEAAAIBAA=</HashCode>
+      <FileName>Models\database.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Karnel_Travels.Models.Login">
+    <Position X="4.75" Y="2" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAACAAAAAAAAAAAAAAAAAAAAACAAAAAAAAAAA=</HashCode>
+      <FileName>Models\Login.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Karnel_Travels.Models.Tour">
+    <Position X="13" Y="0.5" Width="2" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAABQAAAABACAAAAAgQAgAIBAAANAAAAAAA=</HashCode>
+      <FileName>Models\Tour.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Karnel_Travels.Models.Tour_Booking">
+    <Position X="11.25" Y="3.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>ACAAACAEAQAAAAABAIAAQAAAAAAAAAAAAAABAAEAAAA=</HashCode>
+      <FileName>Models\Tour_Booking.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Karnel_Travels.Models.checkDateTime">
+    <Position X="4.75" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAgAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Models\Tour_Booking.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Karnel_Travels.Models.TourDetailModel">
+    <Position X="11.25" Y="6" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAACAAAAAAAAAAAAAAAAACAAAAAIAEoAAA=</HashCode>
+      <FileName>Models\TourDetailModel.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Karnel_Travels.Models.TourViewModel">
+    <Position X="4.75" Y="3.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAABAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAEAAAA=</HashCode>
+      <FileName>Models\TourViewModel.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Karnel_Travels.Models.Travel">
+    <Position X="6.75" Y="3" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAQAAAAAAEAAAAACEAAAAEAQAAAAAAAQAAAAAAIg=</HashCode>
+      <FileName>Models\Travel.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Karnel_Travels.Models.Travel_Booking">
+    <Position X="2.75" Y="3.25" Width="1.75" />
+    <TypeIdentifier>
+      <HashCode>ACAAACAEAQAAAAABAIAAQAAAAAAAAAAAAAAAAAAABIA=</HashCode>
+      <FileName>Models\Travel_Booking.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Karnel_Travels.Models.User">
+    <Position X="2.75" Y="0.5" Width="1.75" />
+    <TypeIdentifier>
+      <HashCode>ACAAAQQAAAABAAAAAAAAAAAIAAAAAAIAAAAgAIAAAAI=</HashCode>
+      <FileName>Models\User.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Font Name="Segoe UI" Size="9" />
+</ClassDiagram>

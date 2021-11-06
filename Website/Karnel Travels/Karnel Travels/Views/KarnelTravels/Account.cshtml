@@ -1,0 +1,163 @@
+﻿@model Karnel_Travels.Models.AccountViewModel
+@{
+    ViewBag.Title = "Account";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+<div class="page">
+    <div class="container" style="margin-top:50px;">
+        @{
+            foreach (var i in Model.Users)
+            {
+                <h3 class="text-dark text-center" style="font-family: 'Lobster', cursive;"><b>Welcome :</b></h3>
+               <h1 class="text-dark text-center" style="font-family: 'Anton', sans-serif;"><b>@i.User_FirstName @i.User_LastName</b></h1>
+               <h4 class="text-center" style="color: #2D60AB">@i.User_Type</h4>
+            }
+        }
+        <p>@Html.ActionLink("Click Here To Sign Out", "Signout", new { @class = "btn btn-primary" })</p>
+        <div class="container" id="travel" style="background-color:white; margin-top:50px;">
+            <h2 class="text-center">Travels</h2>
+          @{
+              if (Model.Travel_Books.Count() > 0)
+              { 
+                <div id="colorlib-rooms" class="colorlib-light-grey">
+               <div class="container" id="travel">
+              <div class="row">
+              @foreach (var j in Model.Travel_Books) {
+                  
+                  
+                  foreach (var i in j.Travels) { 
+                  
+                  
+                                         
+                  <div class="col-md-4 room-wrap animate-box fadeInUp animated-fast">
+                          <a href="@Url.Content(@i.Travel_Picture)" class="room image-popup-link" style="background-image: url('@Url.Content(@i.Travel_Picture)');"></a>
+                          <div class="desc text-center">
+                              <span class="rate-star"><i class="icon-star-full full"></i><i class="icon-star-full full"></i><i class="icon-star-full full"></i><i class="icon-star-full"></i><i class="icon-star-full"></i></span>
+                              <h3><a><b>@i.Travel_Name</b></a></h3>
+                              <p><h5>Travel Provider @i.Travel_DriverName</h5></p>
+                              <p class="price">
+                                  <span class="currency">Rs :</span>
+                                  <span class="price-room">@i.Travel_Price</span>
+                                  <span class="per">/ Ride</span>
+                              </p>
+                              <p>@Html.ActionLink("Check Details", "TravelDetails", new { id = @i.Travel_Id, @class = "btn btn-primary" })</p>
+                             
+                              <p class="text-center"><a>@j.Date_Book</a></p>
+                              
+                          </div>
+                      </div>
+                      
+                  }
+                      }
+                      </div>
+                          </div>
+                          </div>
+              }
+              else
+              {
+                <h3 class="text-center" style="color: #A7ABB4">YOU HAVE NOT BOOK ANY TRAVELS YET</h3>
+              }
+}
+                  </div>
+
+        <div class="container" id="tour" style="background-color:white; margin-top:50px;">
+            <h2 class="text-center">Tours</h2>
+            @{
+                if (Model.Travel_Books.Count() > 0)
+                {
+                    <div id="colorlib-rooms" class="colorlib-light-grey">
+                        <div class="container" id="travel">
+                            <div class="row">
+                                @foreach (var j in Model.Tour_Book)
+                                {
+
+
+                                    foreach (var i in j.Tours)
+                                    {
+
+
+
+                                        <div class="col-md-4 room-wrap animate-box fadeInUp animated-fast">
+                    <a href="@Url.Content(@i.Tour_Picture)" class="room image-popup-link" style="background-image: url('@Url.Content(@i.Tour_Picture)');"></a>
+                    <div class="desc text-center">
+                        <span class="rate-star"><i class="icon-star-full full"></i><i class="icon-star-full full"></i><i class="icon-star-full full"></i><i class="icon-star-full"></i><i class="icon-star-full"></i></span>
+                        <h3><a href="@Url.Action("Tours","KarnelTravels")"><b>@i.Tour_Name</b></a></h3>
+                        <p style="margin-top:10px;">A Tour By @i.Tour_OrganizerName</p>
+                        <p class="price">
+                            <span class="currency">Rs :</span>
+                            <span class="price-room">@i.Tour_Price</span>
+                            <span class="per">/ per night</span>
+                        </p>
+                        <p>@Html.ActionLink("Check Details", "TourDetails", new { id = @i.Tour_Id, @class = "btn btn-primary" })</p>
+                    </div>
+                </div>
+
+                                    }
+                                }
+                            </div>
+                        </div>
+                    </div>
+                }
+                else
+                {
+                    <h3 class="text-center" style="color: #A7ABB4">YOU HAVE NOT BOOK ANY TOURS YET</h3>
+                }
+            }
+        </div>
+
+        <div class="container" id="accomadtion" style="background-color:white; margin-top:50px;">
+            <h2 class="text-center">Accomadtions</h2>
+            @{
+                if (Model.Accomadtion_Book.Count() > 0)
+                {
+                    <div id="colorlib-rooms" class="colorlib-light-grey">
+                        <div class="container" id="travel">
+                            <div class="row">
+                                @foreach (var j in Model.Accomadtion_Book)
+                                {
+
+
+                                    foreach (var i in j.Accomadtions)
+                                    {
+
+
+
+                                       <div class="col-md-4 room-wrap animate-box fadeInUp animated-fast">
+                    <a href="@Url.Content(@i.Accomadtion_Picture)" class="room image-popup-link" style="background-image: url('@Url.Content(@i.Accomadtion_Picture)');"></a>
+                    <div class="desc text-center">
+                   <span class="rate-star"><i class="icon-star-full full"></i><i class="icon-star-full full"></i><i class="icon-star-full full"></i><i class="icon-star-full"></i><i class="icon-star-full"></i></span>
+                   <h3><a href="rooms-suites.html"><b>@i.Accomadtion_Name</b></a></h3>
+                    <p class="price">
+                    <span class="currency">Rs :</span>
+                    <span class="price-room">@i.Accomadtion_Price</span>
+                    <span class="per">/ per night</span>
+                    </p>
+                    <p>
+                     @i.Accomadtion_Country..
+                      @i.Accomadtion_City
+                     </p>
+                   <p>@Html.ActionLink("Check Details", "AccomadtionDetails", new { id = @i.Accomadtion_Id, @class = "btn btn-primary" })</p>
+                      </div>
+                  </div>
+
+
+                                    }
+                                }
+                            </div>
+                        </div>
+                    </div>
+                }
+                else
+                {
+                    <h3 class="text-center" style="color: #A7ABB4">YOU HAVE NOT BOOK ANY Accomadtion YET</h3>
+                }
+            }
+        </div>
+
+
+
+        </div>
+
+
+
+    </div>    

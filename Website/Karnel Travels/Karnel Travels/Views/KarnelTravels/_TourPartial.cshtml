@@ -1,0 +1,23 @@
+﻿@model IEnumerable<Karnel_Travels.Models.Tour>
+    <div class="row">
+        @{
+            foreach (var i in Model)
+            {
+                <div class="col-md-4 room-wrap animate-box fadeInUp animated-fast">
+                    <a href="@Url.Content(@i.Tour_Picture)" class="room image-popup-link" style="background-image: url('@Url.Content(@i.Tour_Picture)');"></a>
+                    <div class="desc text-center">
+                        <span class="rate-star"><i class="icon-star-full full"></i><i class="icon-star-full full"></i><i class="icon-star-full full"></i><i class="icon-star-full"></i><i class="icon-star-full"></i></span>
+                        <h3><a href="@Url.Action("Tours","KarnelTravels")"><b>@i.Tour_Name</b></a></h3>
+                        <p style="margin-top:10px;">A Tour By @i.Tour_OrganizerName</p>
+                        <p class="price">
+                            <span class="currency">Rs :</span>
+                            <span class="price-room">@i.Tour_Price</span>
+                            <span class="per">/ per night</span>
+                        </p>
+                        <p>@Html.ActionLink("Check Details", "TourDetails", new { id = @i.Tour_Id, @class = "btn btn-primary" })</p>
+                    </div>
+                </div>
+            }
+        }
+    </div>
+

@@ -1,0 +1,127 @@
+﻿@model Karnel_Travels.Models.Contact
+@{
+    ViewBag.Title = "Contact";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+<aside id="colorlib-hero">
+    <div class="flexslider">
+        <ul class="slides">
+            <li style="background-image: url(@Url.Content("~/Content/images/Slider/getty_583734066_335273.jpg"));">
+                <div class="overlay"></div>
+                <div class="container-fluid">
+                    <div class="row">
+                        <div class="col-md-6 col-sm-12 col-md-offset-3 slider-text">
+                            <div class="slider-text-inner text-center">
+                                <h2>Welcome to the Kernal Travels</h2>
+                                <h1>A Travel &amp; Tour Service Website..</h1>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </li>
+            <li style="background-image: url(@Url.Content("~/Content/images/Slider/MW-GY949_travel_20181122135819_ZH.jpg"));">
+                <div class="overlay"></div>
+                <div class="container-fluid">
+                    <div class="row">
+                        <div class="col-md-6 col-sm-12 col-md-offset-3 slider-text">
+                            <div class="slider-text-inner text-center">
+                                <h2>Discover &amp; Enjoy</h2>
+                                <h1>Everything you need in Kernal Travels</h1>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </li>
+            <li style="background-image: url(@Url.Content("~/Content/images/Slider/fun_in_the_sun-wallpaper-1600x1200.jpg"));">
+                <div class="overlay"></div>
+                <div class="container-fluids">
+                    <div class="row">
+                        <div class="col-md-6 col-sm-12 col-md-offset-3 slider-text">
+                            <div class="slider-text-inner text-center">
+                                <h2>You are invited</h2>
+                                <h1>We know how to please you</h1>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </li>
+            <li style="background-image: url(@Url.Content("~/Content/images/Slider/Tout-Aspen-HunterLawrence.jpg")); ">
+                <div class="overlay"></div>
+                <div class="container-fluid">
+                    <div class="row">
+                        <div class="col-md-6 col-sm-12 col-md-offset-3 slider-text">
+                            <div class="slider-text-inner text-center">
+                                <h2>Come &amp; enjoy the unforgetable nights</h2>
+                                <h1>In the heart of Kernal Travel</h1>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </li>
+        </ul>
+    </div>
+</aside>
+<div id="colorlib-contact">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-10 col-md-offset-1 animate-box fadeInUp animated-fast">
+                <h3>Contact Information</h3>
+                <div class="row contact-info-wrap">
+                    <div class="col-md-3">
+                        <p><span><i class="icon-location-2"></i></span> 198 West 21th Street, <br> Suite 721 New York NY 10016</p>
+                    </div>
+                    <div class="col-md-3">
+                        <p><span><i class="icon-phone3"></i></span> <a href="tel://1234567920">+ 1235 2355 98</a></p>
+                    </div>
+                    <div class="col-md-3">
+                        <p><span><i class="icon-paperplane"></i></span> <a href="mailto:info@yoursite.com">info@yoursite.com</a></p>
+                    </div>
+                    <div class="col-md-3">
+                        <p><span><i class="icon-globe"></i></span> <a href="#">luxehotel.com</a></p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-10 col-md-offset-1 animate-box fadeInUp animated-fast">
+                <h3>Get In Touch</h3>
+                <form action="@Url.Action("Contactus","KarnelTravels")">
+                    <div class="row form-group">
+                        <div class="col-md-6">
+                            <label for="firstname">First Name</label>
+                            @Html.TextBoxFor(m => m.FirstName, new { type = "text", id = "firstname", @class = "form-control", placeholder = "Your firstname" })
+                        </div>
+                        <div class="col-md-6">
+                            <label for="lastname">Last Name</label>
+                            @Html.TextBoxFor(m => m.LastName,new {type="text", id="lastname", @class="form-control", placeholder="Your lastname"})
+                        </div>
+                    </div>
+
+                    <div class="row form-group">
+                        <div class="col-md-12">
+                            <label for="Cemail">Email</label>
+                           @Html.TextBoxFor(m => m.Email,new { type="email",id="Cemai",@class="form-control" ,placeholder="Your email address"})
+                        </div>
+                    </div>
+
+                    <div class="row form-group">
+                        <div class="col-md-12">
+                            <label for="subject">Subject</label>
+                            @Html.TextBoxFor(m => m.Subject,new {type="text", id="subject" ,@class="form-control", placeholder="Your subject of this message"})
+                        </div>
+                    </div>
+
+                    <div class="row form-group">
+                        <div class="col-md-12">
+                            <label for="message">Message</label>
+                            @Html.TextAreaFor(m => m.Body,new { name="message", id="message" ,cols="30", rows="10" ,@class="form-control" ,placeholder="Say something about us"})
+                        </div>
+                    </div>
+                    <div class="form-group text-center">
+                        <input type="submit" value="Send Message" class="btn btn-primary">
+                    </div>
+
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+

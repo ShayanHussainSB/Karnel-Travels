@@ -1,0 +1,147 @@
+﻿@model Karnel_Travels.Models.Tour
+@{
+    ViewBag.Title = "AddTour";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+
+<style>
+    .error {
+        color: orangered;
+        font-family: 'MS UI Gothic';
+        font-weight: bold;
+    }
+    .File{
+        padding:15px;
+        background:#00ff90;
+        color:white;
+        font:bold;
+    }
+</style>
+
+<div class="col-md-10 col-md-offset-1 animate-box fadeInUp animated-fast" style="margin-top:100px;">
+    <h3>Fill Form &amp; Add a Tour</h3>
+@*@using (Html.BeginForm("AddAccomadtion", "KarnelTravels", FormMethod.Post, new { enctype = "multipart/form-data" }))
+{ *@
+    <form method="post" action="@Url.Action("addtour", "KarnelTravels")" enctype="multipart/form-data">
+        <div class="row form-group">
+            <div class="col-md-6">
+                <label for="fname">Tour Name :</label>
+                @Html.TextBoxFor(m => m.Tour_Name, new { type = "text", id = "fname", @class = "form-control", placeholder = "Enter tour name" })
+                <div class="error">
+                    @Html.ValidationMessageFor(m => m.Tour_Name)
+                </div>
+            </div>
+            <div class="col-md-6">
+                <label for="lname">Orginizor's Name :</label>
+                @Html.TextBoxFor(m => m.Tour_OrganizerName, new { type = "text", id = "lname", @class = "form-control", placeholder = "Enter Organizer Name" })
+                <div class="error">
+                    @Html.ValidationMessageFor(m => m.Tour_OrganizerName)
+                </div>
+            </div>
+        </div>
+
+        <div class="row form-group">
+            <div class="col-md-12">
+                <label for="email"> Overview </label>
+                @Html.TextBoxFor(m => m.Tour_OverView, new { type = "text", id = "email", @class = "form-control", placeholder = "Enter A OverView For The Tour" })
+                <div class="error">
+                    @Html.ValidationMessageFor(m => m.Tour_OverView)
+                </div>
+            </div>
+        </div>
+        <div class="row form-group">
+            <div class="col-md-12">
+                <label for="password">Price</label>
+                @Html.TextBoxFor(m => m.Tour_Price, new { type = "text", id = "password", @class = "form-control", placeholder = "Enter Tour Price" })
+                <div class="error">
+                    @Html.ValidationMessageFor(m => m.Tour_Price)
+                </div>
+            </div>
+        </div>
+        <div class="row form-group">
+            <div class="col-md-12">
+                <label for="contact">Organizer's Contact :</label>
+                @Html.TextBoxFor(m => m.Tour_OrganizerContact, new { type = "text", id = "contact", @class = "form-control", placeholder = "Enter Organizer Contact No" })
+                <div class="error">
+                    @Html.ValidationMessageFor(m => m.Tour_OrganizerContact)
+                </div>
+            </div>
+        </div>
+        <div class="row form-group">
+            <div class="col-md-12">
+                <label for="gender">Country :</label>
+                @Html.TextBoxFor(m => m.Tour_Country, new { type = "text", id = "gender", @class = "form-control", placeholder = "Enter Tour's Country Name" })
+                <div class="error">
+                    @Html.ValidationMessageFor(m => m.Tour_Country)
+                </div>
+            </div>
+        </div>
+        <div class="row form-group">
+            <div class="col-md-12">
+                <label for="contact">City:</label>
+                @Html.TextBoxFor(m => m.Tour_City, new { type = "text", id = "contact", @class = "form-control", placeholder = "Enter Tour's City Name" })
+                <div class="error">
+                    @Html.ValidationMessageFor(m => m.Tour_City)
+                </div>
+            </div>
+        </div>
+        <div class="row form-group">
+            <div class="col-md-12">
+                <label for="contact">Important Information:</label>
+                @Html.TextBoxFor(m => m.Tour_ImpInfo, new { type = "text", id = "contact", @class = "form-control", placeholder = "Enter Tour's Important Information" })
+                <div class="error">
+                    @Html.ValidationMessageFor(m => m.Tour_ImpInfo)
+                </div>
+            </div>
+        </div>
+        <div class="row form-group">
+            <div class="col-md-12">
+                <label for="contact">Tour's Duration:</label>
+                @{
+                    List<string> dur = new List<string>();
+                    dur.Add("5 Hour");
+                    dur.Add("8 Hour");
+                    dur.Add("10 Hour");
+                    dur.Add("12 Hour");
+                    dur.Add("16 Hour");
+                    dur.Add("1 Day");
+                    dur.Add("2 Day");
+                    dur.Add("3 Day");
+                    dur.Add("4 Day");
+                    dur.Add("6 Day");
+                    dur.Add("8 Day");
+                    dur.Add("8+ Day");
+                }
+                @Html.DropDownListFor(m => m.Tour_Duration, new SelectList(dur), new { type = "text", id = "gender", @class = "form-control" })
+                <div class="error">
+                    @Html.ValidationMessageFor(m => m.Tour_Duration)
+                </div>
+            </div>
+        </div>
+        <div class="row form-group">
+            <div class="col-md-12">
+                <label for="contact">Tour Picture:</label>
+                <input type="file" id="ImagePath" name="ImagePath" />
+                <div class="error">
+                    @Html.ValidationMessageFor(m => m.Tour_Picture)
+                </div>
+            </div>
+        </div>
+        <div class="row form-group">
+            <div class="col-md-12">
+                <label for="address">Tour Address :</label>
+                @Html.TextAreaFor(m => m.Tour_Address, new { name = "message", id = "address", cols = "30", rows = "10", @class = "form-control", placeholder = "Enter Tour Address" })
+                <div class="error">
+                    @Html.ValidationMessageFor(m => m.Tour_Address)
+                </div>
+            </div>
+        </div>
+
+        <div class="form-group text-center">
+            <button id="senddata" type="submit" class="btn btn-primary btn-lg">Generate Tour</button>
+        </div>
+    </form>
+
+</div>
+
